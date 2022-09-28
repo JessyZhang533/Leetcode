@@ -1,6 +1,7 @@
 # Richest customer wealth
 
 class Solution:
+    # Using sum(): sums up the numbers in a list
     def maximumWealth_1(self, accounts: List[List[int]]) -> int:
         max_wealth = 0
         for i in range(len(accounts)):  # DO NOT write len(...) withour range
