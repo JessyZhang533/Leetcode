@@ -1,12 +1,14 @@
 # Add two numbers
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers_1(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         def convert(node):
             num = 0
             while node.next:
@@ -36,5 +38,22 @@ class Solution:
             temp.next = ListNode(sum_digits[i])
             temp = temp.next
         return head
+
+    # The concept of carry: add digits from the lowest level (10**0)
+    def addTwoNumbers_2(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        result = ListNode(0)
+        result_tail = result
+        carry = 0
+                
+        while l1 or l2 or carry:            
+            val1  = (l1.val if l1 else 0)  # if statement
+            val2  = (l2.val if l2 else 0)  # if statement
+            carry, out = divmod(val1 + val2 + carry, 10)  # divmod(divident, divisor): returns a tuple containing the quotient and the remainder.
+                      
+            result_tail.next = ListNode(out)
+            result_tail = result_tail.next                      
             
-            
+            l1 = (l1.next if l1 else None)
+            l2 = (l2.next if l2 else None)
+               
+        return result.next
