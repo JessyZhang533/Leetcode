@@ -1,5 +1,10 @@
 # Longest common prefix
 
+# test of method 2
+str = ["annnnn", "b", "kie", "annn", "Annnn"]
+print(min(str))
+print(max(str))
+
 class Solution:
     def longestCommonPrefix_1(self, strs: List[str]) -> str:
         min_len_word = min(strs)
@@ -12,6 +17,9 @@ class Solution:
         return prefix
 
     # min() and max() used on a list of strings
+    # 1. Strings starting with uppercase will be proiritised
+    # 2. Sort the first letter by alphebetical order
+    # 3. Sort by length of string
     def longestCommonPrefix_2(self, m):
         if not m: return ''
 		# since list of string will be sorted and retrieved min max by alphebetic order
