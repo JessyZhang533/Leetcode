@@ -15,3 +15,8 @@ class Solution:
                 n -= 1
         if n > 0:  # Don't need case where m>0, cause then we don't need to modify nums1
             nums1[:n] = nums2[:n]
+
+# NO need to worry about overwriting in nums1:
+# Say we've filled the last n items in nums1, which means taht we've aleady sorted out the n largest values of the two lists.
+# Say these n values have i values from nums1 and (n-i) values from nums2.
+# Then now we have i extra spaces in nums 1, and we still have i values in nums2 needing to be moved to nums1, i==i, perfect.
