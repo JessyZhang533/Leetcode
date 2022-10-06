@@ -2,7 +2,7 @@
 
 class Solution:
     def findMedianSortedArrays_1(self, nums1: List[int], nums2: List[int]) -> float:
-        " Same as merge sort "
+        " Same as merge sort; O(m+n) "
         combine = []
         m = len(nums1)
         n = len(nums2)
@@ -37,7 +37,7 @@ class Solution:
             return (self.kth(A, B, l // 2) + self.kth(A, B, l // 2 - 1)) / 2.
 
     def kth(self, a, b, k):
-        " Return the kth smallest element of a and b combined "
+        " Return the kth smallest element of a and b combined; O(m+n) "
         if not a:
             return b[k]
         if not b:
