@@ -1,6 +1,6 @@
 # Substring with Largest Variance
 
-from itertools import permutations # permutations: Return successive r length permutations of elements in the iterable.
+from itertools import permutations  # permutations: Return successive r length permutations of elements in the iterable.
 from collections import Counter  # Counter: a collection where elements are stored as dictionary keys and their counts are stored as dictionary values
 # https://leetcode.com/problems/substring-with-largest-variance/solutions/2041108/python3-enumerate-all-a-b-combinations-and-do-maximum-subarray/
 
