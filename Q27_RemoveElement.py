@@ -14,6 +14,6 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == val:
                 continue
-            nums[k] = nums[i]
+            nums[k] = nums[i]  # k points at the first element == val; set value only, no need to swap
             k += 1
         return k
