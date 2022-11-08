@@ -10,8 +10,12 @@ class Solution:
         pre = None
         temp = head
         while temp:
-            after = temp.next
-            temp.next = pre
-            pre = temp
-            temp = after
+            after = temp.next  # 1
+            temp.next = pre  # 2
+            pre = temp  # 3
+            temp = after  # 4
+            # 1: initialise/move pointer 'after'
+            # 2: reverse arrow
+            # 3: move pointer 'pre'
+            # 4: move pointer 'temp'
         return pre
