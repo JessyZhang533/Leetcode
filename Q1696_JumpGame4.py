@@ -13,7 +13,8 @@ class Solution:
             while dq and nums[dq[-1]] <= nums[i]:
                 dq.pop()
                 # Eliminate elements less or equal to nums[i] from the back (to make sure indices stored in deque indicate elements in decreasing order)
-                # Basic reason to do this is that for elements after index i, we would want to jump from the largest value
+                # Basic reason to pop is that for elements after index i, we would want to jump from the largest value
+                # Basic reason to preserve if nums[dq[-1]] > nums[i] is that if the score of i-k to i are all decreasing, when we move to i+1 to calculate its score, we can only make use of i-k+1 (move 'window' to the right by one, and dq in this case has a length of k+1)
             dq.append(i)
             # print(dp)
 
