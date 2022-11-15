@@ -21,7 +21,7 @@ class Solution:
         # now pre points at left-1
 
         # reverse the [m, n] nodes
-        reverse = None
+        reverse = None  # !!! to avoid cycle in the linked list
         cur = pre.next
         for _ in range(n - m + 1):
             next = cur.next
