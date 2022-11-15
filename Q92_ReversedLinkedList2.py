@@ -28,6 +28,7 @@ class Solution:
             cur.next = reverse
             reverse = cur
             cur = next
+        # now pre.next is where integer m represents
         pre.next.next = cur
         pre.next = reverse
 
