@@ -12,7 +12,7 @@ class Solution(object):
         r, c = len(grid), len(grid[0])
         visited = [[False for _ in range(c)] for _ in range(r)]
 
-        def dfs(i, j):
+        def dfs(i, j):  # Update 'visited'
             " If the input pixel grid[i][j] is '1', i.e. land, then dfs would change the whole island where the pixel is in from False to True (in 'visited') "
             if i < 0 or i >= r or j < 0 or j >= c or grid[i][j] == '0' or visited[i][j]:  # 6 conditions
                 return
