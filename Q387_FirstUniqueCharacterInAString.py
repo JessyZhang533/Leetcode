@@ -8,3 +8,12 @@ class Solution:
             if dic[j] == 1:
                 return s.index(j)
         return -1
+
+
+    def firstUniqChar_2(self, s: str) -> int:
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        index = []
+        for i in letters:
+            if s.count(i) == 1:
+                index.append(s.index(i))
+        return min(index) if len(index) > 0 else -1
