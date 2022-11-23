@@ -10,7 +10,6 @@ class Solution:
             return nums
         for _ in range(k):
             rotate_by_one(nums)
-        return nums
 
     def rotate_2(self, nums: List[int], k: int) -> None:  # t.c. O(n)
         " Math "
