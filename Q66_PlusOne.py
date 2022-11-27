@@ -13,6 +13,7 @@ class Solution:
                     return digits
         return handle(digits, len(digits)-1)
 
+    # The pow(x, y) function returns the value of x to the power of y (x^y).
     def plusOne_2(self, digits: List[int]) -> List[int]:
         " Convert to number, then to string, then to list "
         num = 0
