@@ -1,5 +1,5 @@
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
+    def plusOne_1(self, digits: List[int]) -> List[int]:
         def handle(digits, i):
             digits[i] += 1
             if digits[i] < 10:
@@ -12,3 +12,10 @@ class Solution:
                     digits.insert(0, 1)
                     return digits
         return handle(digits, len(digits)-1)
+
+    def plusOne_2(self, digits: List[int]) -> List[int]:
+        " Convert to number, then to string, then to list "
+        num = 0
+        for i in range(len(digits)):
+            num += digits[i] * pow(10, (len(digits)-1-i))
+        return [int(i) for i in str(num+1)]
