@@ -35,3 +35,12 @@ class Solution_2:
 # Python’s @lru_cache decorator offers a maxsize attribute that defines the maximum number of entries before the cache starts evicting old items.
 # By default, maxsize is set to 128. If you set maxsize to None, then the cache will grow indefinitely, and no entries will be ever evicted.
 # This could become a problem if you’re storing a large number of different calls in memory.
+
+
+# Dynamic Programming
+class Solution_3:
+    def fib(self, n: int) -> int:
+        dp = [0,1]
+        for i in range(2, n+1):
+            dp[i%2] = sum(dp)
+        return dp[n%2]
