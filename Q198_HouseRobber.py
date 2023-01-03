@@ -20,3 +20,18 @@ class Solution:
             prev2 = prev
             prev = cur
         return cur
+
+    # Cleaner dp; bottom up
+    def rob(self, A):
+        dp = [0]*len(A)
+        for i in range(len(A)):
+            if i == 0:
+                dp[i] = A[i]
+            elif i == 1:
+                dp[i] = max(A[i], A[i-1])
+            else:
+                dp[i] = max(dp[i-1], dp[i-2]+A[i])
+                # Reason why we only consider 2 entries before dp[i]:
+                # If passing thru dp[i-3], we definitely need to pass thru dp[i-1] to achieve optimal value
+                # (not to mention all entries before dp[i-3])
+        return dp[len(A)-1]
