@@ -20,3 +20,7 @@ class Solution_2(object):
         for num in nums:
             points[num] += num
         return self.rob(points)
+
+
+# Once we decide that we want a num, we can add all the occurrences of num into the total.
+# https://leetcode.com/problems/delete-and-earn/solutions/109871/awesome-python-4-liner-with-explanation-reduce-to-house-robbers-question/
