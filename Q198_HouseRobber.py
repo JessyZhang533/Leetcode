@@ -14,15 +14,13 @@ class Solution:
         return max(money[-1], money[-2])
 
     def rob_2(self, A):  # t.c. O(N), s.c. O(1)
-        prev2, prev, cur = 0, 0, 0  # 3 variables tracking the sum
-        for i in A:
-            cur = max(prev, i + prev2)
-            prev2 = prev
-            prev = cur
-        return cur
+        dp1, dp2 = 0, 0
+        for num in A:
+            dp1, dp2 = dp2, max(dp1+num, dp2)
+        return dp2
 
     # Cleaner dp; bottom up
-    def rob(self, A):
+    def rob_3(self, A):
         dp = [0]*len(A)
         for i in range(len(A)):
             if i == 0:
