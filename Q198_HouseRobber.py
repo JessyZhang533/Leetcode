@@ -28,7 +28,7 @@ class Solution:
             if i == 0:
                 dp[i] = A[i]
             elif i == 1:
-                dp[i] = max(A[i], A[i-1])
+                dp[i] = max(A[i], A[i-1])  # !!!
             else:
                 dp[i] = max(dp[i-1], dp[i-2]+A[i])
                 # Reason why we only consider 2 entries before dp[i]:
