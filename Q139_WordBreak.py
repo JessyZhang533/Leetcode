@@ -9,11 +9,12 @@ class Solution:
 
     # The following is an explanation of method 1
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        ok = [True]
+        ok = [True]  # ok[i] means whether s can be successfully broken somewhere between index 0 and i
+        # reason why first element initialised to True: gaurantee that if the first letter of s is in wordDict, list_i can be appended a True
         for i in range(1, len(s)+1):
             list_i = []
             for j in range(i):
-                list_i.append(ok[j] and s[j:i] in wordDict)
+                list_i.append(ok[j] and s[j:i] in wordDict)  # 's[j:i] in wordDict' is a whole
             if True in list_i:
                 ok.append(True)
             else:
