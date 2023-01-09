@@ -7,6 +7,8 @@ class Solution:
         " Max left & max right as lists "
         n = len(height)
         maxleft, maxright = [0]*n, [0]*n
+        # maxLeft[i] is the maximum height of the bar on the left side of ith bar.
+        # maxRight[i] is the maximum height of the bar on the right side of ith bar.
         for i in range(1, n):
             maxleft[i] = max(maxleft[i-1], height[i-1])
         for j in range(n-2, -1, -1):
