@@ -1,5 +1,6 @@
 from functools import cache
 from math import factorial
+from itertools import product
 
 
 class Solution:
@@ -27,12 +28,20 @@ class Solution:
 
     # M4: memorize by creating a table
     def uniquePaths_4(self, m, n):
-        dp = [[1]*n for i in range(m)]
-        for i, j in product(range(1, m), range(1, n)):
+        dp = [[1]*n for _ in range(m)]
+        for i, j in product(range(1, m), range(1, n)):  # !!!: product(), same as a nested for loop
             dp[i][j] = dp[i-1][j] + dp[i][j-1]
         return dp[-1][-1]
 
-    # M5: math; fastest
+    # M5: same as M4 (dp)
+    def uniquePaths(self, m: int, n: int) -> int:
+        grid = [[1 for _ in range(n)] for _ in range(m)]
+        for i in range(1, m):
+            for j in range(1, n):
+                grid[i][j] = grid[i-1][j] + grid[i][j-1]
+        return grid[-1][-1]
+
+    # M6: math; fastest
     # calculating the number of different ways to choose m-1 down-moves and n-1 right-moves from a total of m+n-2 moves
     def uniquePaths_5(self, m, n):
         return factorial(m+n-2) // factorial(m-1) // factorial(n-1)
