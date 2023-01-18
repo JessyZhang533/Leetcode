@@ -17,7 +17,7 @@ class Solution:
         for x in nums:
             if len(sub) == 0 or sub[-1] < x:
                 sub.append(x)
-            else:
+            else:  # if len(sub)>=0 and sub[-1] >= x, then a new subsequence will begin to rewrite the old 'sub'. However, as long as the new sequence is not as long, the length of the old 'sub' will be preserved
                 idx = bisect.bisect_left(sub, x)  # Find the index of the first element >= x
                 sub[idx] = x  # Replace that number with x
         return len(sub)
