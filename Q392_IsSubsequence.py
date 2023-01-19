@@ -4,7 +4,7 @@ class Solution:
             return True  # !!!
         elif not t:
             return False
-        
+
         i = 0
         for char in t:
             if i < len(s):  # !!!: check index first
